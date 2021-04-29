@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <title>Add-Book</title>
+    <link rel="icon" href="/images/books1_img.ico">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+          <!-- Left navbar links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+              <a href="/ " class="nav-link">Home</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+                <a href="/ " class="brand-link">
+                    <img src="/images/books_img.jpeg"
+                       alt="Books Logo"
+                       class="brand-image img-circle elevation-3">
+                  <span class="brand-text font-weight-light">Books</span>
+                </a>
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">
+                                  <i class="nav-icon far fa-circle text-right"></i>
+                                  <p>Home</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                  <i class="nav-icon far fa-circle text-primary"></i>
+                                  <p class="text">Add Book</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="/delete" class="nav-link">
+                                  <i class="nav-icon far fa-circle text-danger"></i>
+                                  <p class="text">Delete Book</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="/update" class="nav-link">
+                                  <i class="nav-icon far fa-circle text-success"></i>
+                                  <p class="text">update Book</p>
+                                </a>
+                              </li>
+                          
+                        </ul>
+                    </nav>
+                
+                </div>
+                <!-- /.sidebar -->
+        </aside>
+    
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+              <div class="container-fluid">
+                <div class="row mb-2">
+                  <div class="col-sm-6">
+                    <h1>Book Inventory</h1>
+                  </div>
+                  <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                      <li class="breadcrumb-item"><a href="/ ">Home</a></li>
+                      <li class="breadcrumb-item active">Book Inventory</li>
+                    </ol>
+                  </div>
+                </div>
+              </div><!-- /.container-fluid -->
+            </section>
+        
+            <!-- Main content -->
+            <section class="content">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card card-primary">
+                    <div class="card-header">
+                      <h3 class="card-title">Add book detais</h3>
+        
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-horizontal" id="quickForm" action="/AddData" method="POST" name="myForm">
+                            <div class="card-body">
+                              <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Book ID</label>
+                                <div class="col-sm-10">
+                                  <input type="number" class="form-control" placeholder="Enter book id" name="bookID"><br>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label  class="col-sm-2 col-form-label">Title</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Enter book title" name="title"><br>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label  class="col-sm-2 col-form-label">Author</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Enter book Author" name="authors"><br>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label  class="col-sm-2 col-form-label">Publisher</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" placeholder="Enter book Publisher" name="publisher"><br>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label  class="col-sm-2 col-form-label">Quantity</label>
+                                <div class="col-sm-10">
+                                  <input type="number" class="form-control" placeholder="Enter book Quantity" name="Quantity"><br>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label  class="col-sm-2 col-form-label">Price</label>
+                                <div class="col-sm-10">
+                                  <input type="number" class="form-control" placeholder="Enter book price" name="Price">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                              <button type="submit" class="btn btn-info">Add</button>
+                              <button type="reset" class="btn btn-default float-right">Cancel</button>
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                        </div>
+                        <!-- /.card -->    
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+                
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->  
+    </div>
+    <!--/.wrapper-->
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jquery-validation -->
+    <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+          $.validator.setDefaults({
+            submitHandler: function () {
+              alert( "Form successful submitted!" );
+            }
+          });
+          $('#quickForm').validate({
+            rules: {
+              bookID: {
+                required: true,
+                
+              },
+              title: {
+                required: true,
+                
+              },
+              authors: {
+                required: true,
+                
+              },
+              publisher: {
+                required: true,
+                
+              },
+
+              Quantity: {
+                required: true,
+              },
+
+              Price: {
+                required: true,
+                
+              },
+              
+            },
+            messages: {
+              bookID: {
+                required: "Please enter a Book ID"
+              },
+              title: {
+                required: "Please provide a Book Title"
+              },
+              authors: {
+                required: "Please provide a Book Author"
+              },
+              publisher: {
+                required: "Please provide a Book Publisher"
+              },
+              Quantity: {
+                required: "Please provide Book Quantity"
+              },
+              Price: {
+                required: "Please provide a Book Price"
+              },
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+              error.addClass('invalid-feedback');
+              element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+              $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+              $(element).removeClass('is-invalid');
+            }
+          });
+        });
+        </script>
+    
+</body>
+</html>
